@@ -13,12 +13,15 @@ class VideoMixesController < ApplicationController
     @video_mix = VideoMix.new
     # @genres = Genre.all
     @tags = Tag.all.group_by(&:type)
+    @subtags = Subtag.all
     # Tag.all.group_by { |tag| tag.type } #long form
     # binding.pry
   end
 
   def edit
     @tags = Tag.all.group_by(&:type)
+    @subtags = Subtag.all
+    
     #you wrote set_video in the before_action kevin
     # @genres = Genre.all
   end
@@ -49,7 +52,7 @@ class VideoMixesController < ApplicationController
 
     def video_mix_params
       # binding.pry
-      params.require(:video_mix).permit(:name, tag_ids: [])
+      params.require(:video_mix).permit(:name, tag_ids: [], subtag_ids: [])
     end
 
 end

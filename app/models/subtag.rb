@@ -1,3 +1,4 @@
 class Subtag < ApplicationRecord
-  belongs_to :subtaggable, polymorphic: true
+  belongs_to :tag
+  has_many :subtaggings
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_29_215241) do
+ActiveRecord::Schema.define(version: 2018_11_30_073129) do
 
   create_table "channels", force: :cascade do |t|
     t.string "name"
@@ -18,17 +18,23 @@ ActiveRecord::Schema.define(version: 2018_11_29_215241) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "subtags", force: :cascade do |t|
-    t.string "name"
+  create_table "subtaggings", force: :cascade do |t|
+    t.integer "subtag_id"
     t.string "subtaggable_type"
     t.integer "subtaggable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["subtaggable_type", "subtaggable_id"], name: "index_subtags_on_subtaggable_type_and_subtaggable_id"
+    t.index ["subtaggable_type", "subtaggable_id"], name: "index_subtaggings_on_subtaggable_type_and_subtaggable_id"
+  end
+
+  create_table "subtags", force: :cascade do |t|
+    t.integer "tag_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "taggings", force: :cascade do |t|
-    t.string "context"
     t.integer "tag_id"
     t.string "selectable_type"
     t.integer "selectable_id"

@@ -13,6 +13,15 @@
       <%= tag.name %>
     <% end %>
 
+
+
+  <% end %>
+
+  <h4>Subtags</h4>
+
+  <% @subtags.each do |subtag| %>
+    <%= f.check_box(:subtag_ids, { multiple: true }, subtag.id, false) %>
+    <%= subtag.name %>
   <% end %>
   <!-- <h4> Genres </h4> -->
 
