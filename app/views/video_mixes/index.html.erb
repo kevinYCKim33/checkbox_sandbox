@@ -1,4 +1,4 @@
 at video index
 <% @video_mixes.each do |video_mix| %>
-  <p><%= link_to video_mix.name, video_mix %></p>
+  <p><%= link_to video_mix.name, edit_video_mix_path(video_mix) %></p>
 <% end %>

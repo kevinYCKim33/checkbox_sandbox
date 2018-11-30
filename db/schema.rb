@@ -10,25 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_30_073129) do
+ActiveRecord::Schema.define(version: 2018_11_29_211823) do
 
   create_table "channels", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "subtaggings", force: :cascade do |t|
-    t.integer "subtag_id"
-    t.string "subtaggable_type"
-    t.integer "subtaggable_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["subtaggable_type", "subtaggable_id"], name: "index_subtaggings_on_subtaggable_type_and_subtaggable_id"
-  end
-
-  create_table "subtags", force: :cascade do |t|
-    t.integer "tag_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -46,6 +30,7 @@ ActiveRecord::Schema.define(version: 2018_11_30_073129) do
   create_table "tags", force: :cascade do |t|
     t.string "name"
     t.string "type", null: false
+    t.integer "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
