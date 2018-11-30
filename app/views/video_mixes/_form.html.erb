@@ -1,0 +1,23 @@
+<%= form_with model: @video do |f| %>
+  <%= f.label :title %><br>
+  <%= f.text_field :title %><br>
+  <%= f.select :genre_ids, @genres.map {|genre| [genre.name, genre.id] }, { include_hidden: false }, { multiple: true, class: "genre-multi-selector" }  %><br>
+  <%= f.submit %>
+<% end %>
+
+<!-- https://stackoverflow.com/questions/9100808/using-form-for-multi-select-fields-with-acts-as-taggable-on -->
+<!-- https://stackoverflow.com/questions/8929230/why-is-the-first-element-always-blank-in-my-rails-multi-select-using-an-embedde -->
+
+<!--
+<select multiple="multiple" name="video[genre_ids][]" id="video_genre_ids">
+  <option value="2">Rap</option>
+  <option value="3">Punk</option>
+  <option value="5">Soul</option>
+</select>
+-->
+
+<!-- <select class="js-example-basic-multiple" name="states[]" multiple="multiple">
+  <option value="AL">Alabama</option>
+    ...
+  <option value="WY">Wyoming</option>
+</select> -->

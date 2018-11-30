@@ -1,0 +1,16 @@
+
+<h1><%= @video_mix.name %></h1>
+
+<h3>Genres:</h3>
+
+<%# @video_mix.genres.each do |genre| %>
+  <%#= genre.name %> <br />
+<%# end %>
+
+<h3>Eras:</h3>
+
+
+<br />
+
+<%=link_to 'Edit', edit_video_mix_path(@video_mix) %> <br>
+<%=link_to 'Video Index', video_mixes_path %>

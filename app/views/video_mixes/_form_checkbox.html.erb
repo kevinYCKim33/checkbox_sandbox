@@ -1,0 +1,34 @@
+<%= form_with model: @video_mix do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+
+  <% ['Genre', 'Era'].each do |tag_type| %>
+    <%# binding.pry %>
+    <h4>
+      <%= tag_type.pluralize %>
+    </h4>
+
+    <% @tags[tag_type].each do |tag| %>
+      <%= f.check_box(:tag_ids, { multiple: true }, tag.id, false) %>
+      <%= tag.name %>
+    <% end %>
+
+  <% end %>
+  <!-- <h4> Genres </h4> -->
+
+  <%# Genre.all.each do |genre| %>
+    <%#= f.check_box(:tag_ids, { multiple: true }, genre.id, false) %>
+    <%#= genre.name %>
+  <%# end %>
+
+  <!-- <h4> Eras </h4> -->
+
+  <%# Era.all.each do |era| %>
+    <%#= f.check_box(:tag_ids, { multiple: true }, era.id, false) %>
+    <%#= era.name %>
+  <%# end %>
+
+
+
+  <%= f.submit %>
+<% end %>
