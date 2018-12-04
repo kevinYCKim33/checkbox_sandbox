@@ -11,6 +11,7 @@ class VideoMixesController < ApplicationController
   def new
     @video_mix = VideoMix.new
     @tags = Tag.all.group_by(&:type)
+    # @subtags = Subtag.all
   end
 
   def edit
@@ -35,6 +36,7 @@ class VideoMixesController < ApplicationController
     end
 
     def video_mix_params
+      # binding.pry
       params.require(:video_mix).permit(:name, tag_ids: [])
     end
 

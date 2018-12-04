@@ -1,4 +1,8 @@
 at channel
 <% @channels.each do |channel| %>
-  <p><%= link_to channel.name, edit_channel_path(channel) %></p>
+
+  <p>
+    <%= link_to channel.name, edit_channel_path(channel) %>
+  </p>
+
 <% end %>

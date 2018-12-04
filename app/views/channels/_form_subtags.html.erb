@@ -1,0 +1,29 @@
+<%= form_with model: @channel do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+
+  <% ['Genre', 'Era', 'Occasion'].each do |tag_type| %>
+    <h4>
+      <%= tag_type.pluralize %>
+    </h4>
+
+    <% @tags[tag_type].each do |tag| %>
+      <%= f.check_box(:tag_ids, { multiple: true, class: "parent-tag" }, tag.id, false) %>
+      <span> <%= tag.name %> </span>
+    <% end %>
+  <% end %>
+
+  <h4>
+    Subtags
+  </h4>
+
+  <% @tags['Subtag'].each do |subtag| %>
+    <%= f.check_box(:tag_ids, { multiple: true, class: "subtag-#{subtag.parent_id}" }, subtag.id, false) %>
+    <span class="subtag-<%="#{subtag.parent_id}"%>-label"> <%= subtag.name %> </span>
+  <% end %>
+
+  <br />
+
+  <%= f.submit %>
+
+<% end %>

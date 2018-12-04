@@ -23,6 +23,13 @@ ninetys = Era.create(name: '1990s');
 millenium = Era.create(name: '2000s');
 todays = Era.create(name: '2010s');
 
+dinner = Occasion.create(name: 'Dinner')
+hh = Occasion.create(name: 'Happy Hour')
+bf = Occasion.create(name: 'Breakfast')
+lunch = Occasion.create(name: 'Lunch')
+pc = Occasion.create(name: 'Pre Club')
+
+
 Subtag.create(name: 'country-1', parent_id: country.id)
 Subtag.create(name: 'country-2', parent_id: country.id)
 Subtag.create(name: 'country-3', parent_id: country.id)
@@ -46,23 +53,3 @@ Subtag.create(name: 'millenium-3', parent_id: millenium.id)
 Subtag.create(name: 'todays-1', parent_id: todays.id)
 Subtag.create(name: 'todays-2', parent_id: todays.id)
 Subtag.create(name: 'todays-3', parent_id: todays.id)
-
-
-
-
-
-# Subtag.create(tag: country, name: 'country-1');
-# Subtag.create(tag: country, name: 'country-2');
-# Subtag.create(tag: country, name: 'country-3');
-#
-# Subtag.create(tag: punk, name: 'punk-1');
-# Subtag.create(tag: punk, name: 'punk-2');
-# Subtag.create(tag: punk, name: 'punk-3');
-#
-# Subtag.create(tag: millenium, name: 'millenium-1');
-# Subtag.create(tag: millenium, name: 'millenium-2');
-# Subtag.create(tag: millenium, name: 'millenium-3');
-#
-# Subtag.create(tag: todays, name: 'todays-1');
-# Subtag.create(tag: todays, name: 'todays-2');
-# Subtag.create(tag: todays, name: 'todays-3');
