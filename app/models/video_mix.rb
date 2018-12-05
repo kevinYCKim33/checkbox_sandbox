@@ -6,6 +6,3 @@ class VideoMix < ApplicationRecord
   # https://apidock.com/rails/ActiveRecord/Associations/CollectionAssociation/ids_writer
 
 end
-
-
-## @video_mix.tags(group_by)

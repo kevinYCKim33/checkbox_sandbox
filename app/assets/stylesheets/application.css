@@ -18,5 +18,5 @@
 /* .subtag- */
 
 [class^="subtag-"] {
-  display: none;
+  display: none !important;
 }
