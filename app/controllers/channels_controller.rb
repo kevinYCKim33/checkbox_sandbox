@@ -2,8 +2,12 @@ class ChannelsController < ApplicationController
   before_action :set_channel, only: [:show, :edit, :update]
 
   def index
-    @channels = Channel.all
+    # @channels = Channel.all
+    @channels = Channel.joins(:tags).group('tags.name')
   end
+
+  # Channel.joins(:tags).where('tags.type = ?', 'Genre').group('tags.name').count
+  # Channel.joins(:tags).where('tags.name = ?', 'Country')
 
   def show
   end
